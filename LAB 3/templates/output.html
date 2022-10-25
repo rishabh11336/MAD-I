@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>{{heading}}</h1>
+        {% if req == "student_id" %}
+        <table border= "2" id = "student-details-table">
+            <tr>
+                <th>Student id</th>
+                <th>Course id</th>
+                <th>Marks</th>
+            </tr>
+            {% for i in range(size) %}
+            <tr>
+                <td>{{student_id}}</td>
+                <td>{{course_id[i]}}</td>
+                <td>{{marks[i]}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="2" style="text-align:center">Total Marks</td>
+                <td>{{total}}</td>
+            </tr>
+        </table>
+        {% elif req == "course_id" %}
+        <table border= '2' id="course-details-table">
+            <tr>
+                <th>Average Marks</th>
+                <th>Maximum Marks</th>
+            </tr>
+            <tr>
+                <td>{{average}}</td>
+                <td>{{maximum}}</td>
+            </tr>
+        </table>
+        <img src="./static/hist.png">
+        {% else %}
+        <p>Something went wrong</p>
+        {% endif %} 
+        <a href="/">Go back</a>
+    </body>
+</html>
